@@ -10,6 +10,9 @@ interface IRequest {
   password: string;
 }
 
+// S = Single Responsability Principle
+// inversão de dependencia: D = Dependency inversion principle
+
 @injectable()
 export default class CreateUserService {
   constructor(
