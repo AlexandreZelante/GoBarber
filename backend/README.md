@@ -25,7 +25,7 @@
 
 **RN**
 
-- O usuário não pode altearar seu email para um email já utilizado;
+- O usuário não pode alterar seu email para um email já utilizado;
 - Para atualizar sua senha, o usuário deve informar a senha antiga;
 - Para atualizar sua senha, o usuário deve confirmar sua nova senha;
 
