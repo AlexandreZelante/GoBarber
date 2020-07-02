@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 
 // Decorator
-@Entity('users')
+@Entity('user_tokens')
 class UserToken {
   @PrimaryGeneratedColumn('uuid')
   id: string;

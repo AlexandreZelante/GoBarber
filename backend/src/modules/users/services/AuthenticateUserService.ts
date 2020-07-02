@@ -33,16 +33,21 @@ export default class AuthenticateUserService {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new AppError('Incorrect email/password combination', 401);
+      throw new AppError('User does not exists', 401);
     }
 
     // user.password - senha criptografada
     // password - Senha não-criptografada
 
+    console.log('Senha', password);
+    console.log('Senha', user.password);
+
     const passwordMatched = await this.hashProvider.compareHash(
       password,
       user.password,
     );
+
+    // const passwordMatched = password === user.password;
 
     if (!passwordMatched) {
       throw new AppError('Incorrect email/password combination', 401);
