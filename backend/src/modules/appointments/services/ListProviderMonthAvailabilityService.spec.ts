@@ -1,6 +1,5 @@
 import 'reflect-metadata';
 
-import { roundToNearestMinutes } from 'date-fns/fp';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import ListProviderMonthAvailabilityService from './ListProviderMonthAvailabilityService';
 
