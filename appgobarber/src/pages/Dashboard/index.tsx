@@ -35,10 +35,14 @@ const Dashboard: React.FC = () => {
   const { navigate } = useNavigation();
 
   useEffect(() => {
-    api.get('/providers').then((response) => {
-      setProviders(response.data);
-      console.log(response.data);
-    });
+    api
+      .get('/providers')
+      .then((response) => {
+        setProviders(response.data);
+      })
+      .catch((err) => {
+        console.log('Error', err);
+      });
   }, []);
 
   const navigateToProfile = useCallback(() => {
@@ -69,7 +73,7 @@ const Dashboard: React.FC = () => {
       <ProvidersList
         keyExtractor={(provider) => provider.id}
         ListHeaderComponent={
-          <ProvidersListTitle>Cabeleireiro</ProvidersListTitle>
+          <ProvidersListTitle>Cabeleireiros</ProvidersListTitle>
         }
         data={providers}
         renderItem={({ item: provider }) => (
