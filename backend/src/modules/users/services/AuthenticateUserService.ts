@@ -36,9 +36,6 @@ export default class AuthenticateUserService {
       throw new AppError('User does not exists', 401);
     }
 
-    // user.password - senha criptografada
-    // password - Senha não-criptografada
-
     const passwordMatched = await this.hashProvider.compareHash(
       password,
       user.password,
